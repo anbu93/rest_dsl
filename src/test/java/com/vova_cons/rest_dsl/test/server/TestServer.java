@@ -1,6 +1,6 @@
 package com.vova_cons.rest_dsl.test.server;
 
-import com.vova_cons.rest_dsl.RestDsl;
+import com.vova_cons.rest_dsl.server.RestDsl;
 
 /**
  * Created by anbu on 19.08.20.

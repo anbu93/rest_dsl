@@ -38,7 +38,7 @@ DSL-файл `example.rest_dsl` для генерации необходимых
 dto package "com.vova_cons.rest_dsl.test";
 
 server Test {
-    ip = "localhost";
+    ip "localhost";
     service Example {
         port 8081;
         https {
@@ -50,7 +50,7 @@ server Test {
             request TestRequest;
             response TestResponse;
         }
-}
+    }
 }
 ```
 
@@ -114,7 +114,7 @@ abstract class TestService extends RestDslService {
         return "password";
     }
     
-	@SparkRoute(route = "/test", method = HttpMethod.GET, https=false)
+	@SparkRoute(route = "/test", method = HttpMethod.GET)
 	public abstract TestResponse test(TestRequest request);
 }
 ```
@@ -192,6 +192,8 @@ class ClientMain {
 #### version 0.2
 - Генератор кода
 - Парсер DSL
+
+Выполнено 20/08/2020
 
 #### version 0.3
 - Предопределенные HttpRequestProcessor-ы и их выбор в генераторе

@@ -1,0 +1,17 @@
+dto package "com.vova_cons.rest_dsl.test";
+
+server Test {
+    ip "localhost";
+    service Test {
+        port 8081;
+        https {
+            keystore "keystore.jks";
+            password "password"; // надо добавить чтение пароля с файла а не напрямую с кода
+        }
+        route test {
+            method GET;
+            request TestRequest;
+            response TestResponse;
+        }
+    }
+}
